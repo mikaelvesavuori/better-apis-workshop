@@ -590,8 +590,6 @@ See [Refactoring.guru](https://refactoring.guru) for several ways to approach pr
 
 **🎯 Example 1**: I can't easily point to some evidence here, but the full history of this project has been handled this way.
 
-https://www.atlassian.com/agile/kanban/wip-limits
-
 For me, TBD captures an essential truth: That most branching models are just too complicated, and have too many adverse effects when it comes to merging code and staying agile. Even if certain models (IMHO) balance those aspects fairly well, like [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) (not to be mixed up with [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/)!), nothing is simpler and more core to the agile values than TBD: Just push to `main` (or `master` if you aren't up with the times) and trust your tooling to handle it.
 
 _Note that even Vincent Driessen, the original conceiver of GitFlow, nowadays actively discourages the use of GitFlow in modern circumstances._
@@ -608,7 +606,7 @@ _Tip: You can usually set up various branching strategies and restrictions in yo
 
 [Test-driven development](https://testdriven.io/test-driven-development/) is a practice that a lot of people swear by. I'm a 50/50 person myself—sometimes it makes sense to me, sometimes I just write the tests after I feel I'm out of the weeds when it comes to the first implementation. No need to be a fundamentalist; be a pragmatist! The important thing is that _there are tests_, not so much how and when they came.
 
-However, in case you want to be the good-spirited TDD crusader then I've made it easy to do so.
+However, in case you want to be a good-spirited TDD crusader then I've made it easy to do so.
 
 **🎯 Example**: Just run `npm run test:unit:watch` and Jest will watch your tests and source code. You can also modify what Jest "watches" in the interactive dialog.
 
@@ -637,11 +635,11 @@ Here, we use the [JSDoc](https://jsdoc.app) standard for documenting source code
 
 Then, we use [TypeDoc](https://typedoc.org) for generating docs from the source code.
 
-**🎯 Example 2**: You can generate documentation into the `typedoc-docs` folder by running `npm run docs`. These are the documents uploaded to [the static website](http://better-apis-workshop.pages.dev) as well.
+**🎯 Example 2**: You can generate documentation into the `typedoc-docs` folder by running `npm run docs`. These are the documents uploaded to [the static website](https://better-apis-workshop.pages.dev) as well.
 
 For diagrams, we use [Arkit](https://arkit.pro/) for generating diagrams from your software architecture.
 
-**🎯 Example 3**: See the Arkit diagrams above.
+**🎯 Example 3**: See the Arkit diagrams above. Just as above, generate them with `npm run docs`.
 
 Taken together, this means that you can easily make rich documentation available in a central, visible location (like a static website in this case) in the CI stage. This is precisely what I've done on my end for this project: These diagrams also get uploaded to Cloudflare Pages on each commit to `main`.
 
@@ -741,9 +739,13 @@ So, while it may be non-standard, in this context version 2 of the API represent
 
 With this, we have created a way to define output simply through a header, without resorting to separate codebases or separate deployments.
 
+_[GraphQL is a different beast when it comes to versioning](https://graphql.org/learn/best-practices/#versioning). See this section as REST-specific in its details, but a good idea overall as long as you adapt to what versioning means for your protocol._
+
 ### 📄 API schema
 
 An API schema describes our API in a standardized way. You can write schemas by hand, use tooling to generate them, or go with services like [Stoplight](https://stoplight.io), [Bump](https://bump.sh), [Readme](https://readme.com), and API clients like [Insomnia](https://insomnia.rest/product/design) that sometimes have capabilities to design APIs, too.
+
+**When you actually have a schema, make sure to make it accessible and visible (that's our reason for using Bump in this demo).**
 
 There are a few ways to think about schemas, like ["API design-first"](https://www.infoq.com/articles/api-mocking-break-dependencies/), in which we design the API and generate the actual code from the schema. Our way is more traditional since we create the code and keep the schema mostly as a representation (however: a very important representation!).
 
@@ -786,9 +788,9 @@ It's a methodical, very practical thing too:
 8. Lastly, delete old implementations and the abstraction itself (essential follow up work)
 ```
 
-While our example might be too lightweight, we do have a "beta" version and a "current" version as two code paths, abstracted via the controller (see below). Effectively, we are—even in this contrived example—making it easy and possible to work together with both new and old code without too much risk. Taking this thinking further, it's possible to solve vastly more complex situations just as well.
+**🎯 Example**: While our example might be too lightweight, we do have a "beta" version and a "current" version as two code paths (see `src/FakeUser/controllers/FakeUserController.ts`, lines 37-44), abstracted via the controller. Effectively, we are—even in this contrived example—making it easy and possible to work together with both new and old code without too much risk. Taking this thinking further, it's possible to solve vastly more complex situations just as well.
 
-Refer to [the Branch by Abstraction website](https://www.branchbyabstraction.com).
+Refer to the [Branch by Abstraction website](https://www.branchbyabstraction.com).
 
 ### 🆕 Beta functionality
 
