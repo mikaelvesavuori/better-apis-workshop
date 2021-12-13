@@ -1,0 +1,40 @@
+{
+  "spec": {
+    "lifecycle": "production",
+    "type": "service",
+    "name": "my-project",
+    "team": "ThatTeam",
+    "responsible": "Someguy Someguyson",
+    "system": "something",
+    "domain": "bigarea",
+    "tags": ["typescript", "backend"],
+    "securityClass": "Public",
+    "dataSensitivity": "Sensitive",
+    "l3ResolverGroup": "ThatTeam",
+    "slo": "99.95"
+  },
+  "api": [
+    {
+      "FakeUser": "./api/schema.yml"
+    }
+  ],
+  "metadata": {
+    "annotations": {
+      "sbom": "./outputs/sbom-output.txt",
+      "typedoc": "./typedoc-docs/",
+      "arkit": "./diagrams/"
+    },
+    "description": "The place to be, for great artists",
+    "generation": 1,
+    "labels": {
+      "example.com/custom": "custom_label_value"
+    },
+    "links": [
+      {
+        "url": "https://admin.example-org.com",
+        "title": "Admin Dashboard",
+        "icon": "dashboard"
+      }
+    ]
+  }
+}

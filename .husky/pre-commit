@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm test
+npm run clean
+npm run licenses
+npm run lint
+npm run build
+npx arkit
+git add .

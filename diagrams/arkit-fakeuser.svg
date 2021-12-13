@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="521px" preserveAspectRatio="none" style="width:655px;height:521px;" version="1.1" viewBox="0 0 655 521" width="655px" zoomAndPan="magnify"><defs/><g><!--MD5=[606bc1215b145f737bef9b208052f14f]
+cluster FakeUser: Controllers--><path d="M424,24.5 L566,24.5 A4.5,4.5 0 0 1 569,27.5 L576,44.9844 L602,44.9844 A3,3 0 0 1 605,47.9844 L605,105.5 A3,3 0 0 1 602,108.5 L424,108.5 A3,3 0 0 1 421,105.5 L421,27.5 A3,3 0 0 1 424,24.5 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="421" x2="576" y1="44.9844" y2="44.9844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="142" x="425" y="38.5059">FakeUser: Controllers</text><!--MD5=[fe401929c1b0c4b447bdcdf64f43bb8f]
+cluster FakeUser: Usecases--><path d="M298,132.5 L431,132.5 A4.5,4.5 0 0 1 434,135.5 L441,152.9844 L444,152.9844 A3,3 0 0 1 447,155.9844 L447,207.5 A3,3 0 0 1 444,210.5 L298,210.5 A3,3 0 0 1 295,207.5 L295,135.5 A3,3 0 0 1 298,132.5 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="295" x2="441" y1="152.9844" y2="152.9844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="133" x="299" y="146.5059">FakeUser: Usecases</text><!--MD5=[0e0fa693542fee2d1d0966cb059ab3d7]
+cluster FakeUser: Usecase Interactors--><path d="M273,238.5 L477,238.5 A4.5,4.5 0 0 1 480,241.5 L487,258.9844 L487,258.9844 A3,3 0 0 1 490,261.9844 L490,310.5 A3,3 0 0 1 487,313.5 L273,313.5 A3,3 0 0 1 270,310.5 L270,241.5 A3,3 0 0 1 273,238.5 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="270" x2="487" y1="258.9844" y2="258.9844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="204" x="274" y="252.5059">FakeUser: Usecase Interactors</text><!--MD5=[ffe6647fcd228827dc4c3e89572d2568]
+cluster FakeUser: Entities--><path d="M115,234.5 L233,234.5 A4.5,4.5 0 0 1 236,237.5 L243,254.9844 L243,254.9844 A3,3 0 0 1 246,257.9844 L246,314.5 A3,3 0 0 1 243,317.5 L115,317.5 A3,3 0 0 1 112,314.5 L112,237.5 A3,3 0 0 1 115,234.5 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="112" x2="243" y1="254.9844" y2="254.9844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="118" x="116" y="248.5059">FakeUser: Entities</text><!--MD5=[0245a3ad560e7ed09f26f1c47c0feddf]
+cluster FakeUser: Config--><path d="M25,433.5 L136,433.5 A4.5,4.5 0 0 1 139,436.5 L146,453.9844 L146,453.9844 A3,3 0 0 1 149,456.9844 L149,505.5 A3,3 0 0 1 146,508.5 L25,508.5 A3,3 0 0 1 22,505.5 L22,436.5 A3,3 0 0 1 25,433.5 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="146" y1="453.9844" y2="453.9844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="111" x="26" y="447.5059">FakeUser: Config</text><!--MD5=[d190e4606bb1de967b290b118f22f9ed]
+cluster FakeUser: Frameworks--><path d="M176,350.5 L323,350.5 A4.5,4.5 0 0 1 326,353.5 L333,370.9844 L625,370.9844 A3,3 0 0 1 628,373.9844 L628,506 A3,3 0 0 1 625,509 L176,509 A3,3 0 0 1 173,506 L173,353.5 A3,3 0 0 1 176,350.5 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="173" x2="333" y1="370.9844" y2="370.9844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="147" x="177" y="364.5059">FakeUser: Frameworks</text><ellipse cx="513.1652" cy="75.033" fill="#F8F8F8" rx="75.6652" ry="17.533" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="126" x="450.1652" y="78.7752">FakeUserController</text><ellipse cx="370.9845" cy="179.8969" fill="#F8F8F8" rx="59.9845" ry="14.3969" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="88" x="326.9845" y="183.6391">createFakeUser</text><ellipse cx="417.8198" cy="284.742" fill="#F8F8F8" rx="34.8198" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="45" x="395.3198" y="288.4842">getData</text><ellipse cx="327.8909" cy="284.742" fill="#F8F8F8" rx="41.8909" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="55" x="300.3909" y="288.4842">getImage</text><!--MD5=[4057bcc862c853cf054ee3572a0e687c]
+entity _User--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #000000; stroke-width: 0.5;" width="46" x="184" y="267.5"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="26" x="194" y="289.5059">User</text><ellipse cx="88.8051" cy="479.742" fill="#F8F8F8" rx="43.3051" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="57" x="60.3051" y="483.4842">endpoints</text><ellipse cx="310.9619" cy="400.742" fill="#F8F8F8" rx="48.9619" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="278.4619" y="404.4842">callExternal</text><!--MD5=[bed906410d67a635de6b93b9ada9bf56]
+entity _Logger--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #000000; stroke-width: 0.5;" width="59" x="189.5" y="383.5"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="39" x="199.5" y="405.5059">Logger</text><ellipse cx="443.108" cy="400.4216" fill="#F8F8F8" rx="70.108" ry="16.4216" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="113" x="386.608" y="404.1638">userFeatureToggles</text><ellipse cx="399.8534" cy="479.5707" fill="#F8F8F8" rx="55.8534" ry="13.5707" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="77" x="361.3534" y="483.3129">userMetadata</text><ellipse cx="569.098" cy="400.742" fill="#F8F8F8" rx="42.598" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="56" x="541.098" y="404.4842">validators</text><!--MD5=[2c0d87f7392de58cff8a6259f9fb5b96]
+link callExternal to endpoints--><path d="M281.589,410.947 C273.084,413.393 263.736,415.812 255,417.5 C221.219,424.029 210.656,414.667 178,425.5 C151.722,434.2175 124.863,451.6178 107.625,464.1048 " fill="none" id="callExternal-&gt;endpoints" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="103.4557,467.1653,113.0778,465.0643,107.4864,464.2066,108.344,458.6152,103.4557,467.1653" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[22cc3d1c45a2805d6836a45292398a20]
+link createFakeUser to getData--><path d="M377.339,194.824 C385.921,213.542 401.22,246.905 410.406,266.939 " fill="none" id="createFakeUser-&gt;getData" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="412.491,271.486,412.3759,261.6378,410.407,266.941,405.1039,264.9722,412.491,271.486" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[70dace22f79aafe6f874aa2685677958]
+link createFakeUser to getImage--><path d="M365.201,194.824 C357.382,213.463 343.47,246.623 335.054,266.685 " fill="none" id="createFakeUser-&gt;getImage" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="333.04,271.486,340.2099,264.7338,334.974,266.8752,332.8326,261.6393,333.04,271.486" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[d893f0d23677555a5a4c06cba57a9f9c]
+link createFakeUser to _User--><path d="M341.414,192.696 C321.89,200.967 296.116,212.962 275,226.5 C257.959,237.425 240.496,252.153 227.534,263.901 " fill="none" id="createFakeUser-&gt;_User" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="223.661,267.444,233.0015,264.3206,227.3502,264.0691,227.6017,258.4179,223.661,267.444" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[d23dc132e32854997bab0f246630c7fd]
+link <b>FakeUserController</b> to createFakeUser--><path d="M491.124,91.868 C464.539,111.151 419.932,143.507 393.201,162.896 " fill="none" id="&lt;b&gt;FakeUserController&lt;/b&gt;-&gt;createFakeUser" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="389.07,165.893,398.7042,163.848,393.1178,162.9578,394.0079,157.3715,389.07,165.893" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[9f30f5f21a633b9419c8f9afefe3f010]
+link <b>FakeUserController</b> to _Logger--><path d="M442.708,81.64 C357.982,92.86 221.001,126.383 173,226.5 C153.978,266.176 160.921,283.19 173,325.5 C178.683,345.405 191.434,365.175 202.073,379.266 " fill="none" id="&lt;b&gt;FakeUserController&lt;/b&gt;-&gt;_Logger" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="205.297,383.45,202.9716,373.8796,202.2449,379.4896,196.6349,378.7629,205.297,383.45" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[b385e4b14f08d28b661d859176f1457a]
+link <b>FakeUserController</b> to userFeatureToggles--><path d="M510.204,92.746 C503.367,133.053 484.833,238.571 464,325.5 C459.648,343.659 453.785,364.058 449.36,378.833 " fill="none" id="&lt;b&gt;FakeUserController&lt;/b&gt;-&gt;userFeatureToggles" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="447.8,384.007,454.2291,376.546,449.2442,379.2201,446.5701,374.2352,447.8,384.007" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[9b1224d16998a47abd117d2d247eb506]
+link <b>FakeUserController</b> to userMetadata--><path d="M530.304,92.188 C563.308,124.914 632,202.728 632,283.5 C632,283.5 632,283.5 632,334.5 C632,371.91 643.018,389.686 618,417.5 C595.804,442.1764 508.001,460.8445 450.824,470.6909 " fill="none" id="&lt;b&gt;FakeUserController&lt;/b&gt;-&gt;userMetadata" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="445.734,471.5582,455.2781,473.9894,450.6629,470.7182,453.9341,466.1031,445.734,471.5582" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[d1472e0ed79e89cde5ca547d8d92698e]
+link <b>FakeUserController</b> to validators--><path d="M516.579,92.58 C518.559,101.936 521.012,113.851 523,124.5 C541.143,221.698 559.619,338.866 566.346,382.254 " fill="none" id="&lt;b&gt;FakeUserController&lt;/b&gt;-&gt;validators" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="567.144,387.409,569.7213,377.9034,566.3797,382.4678,561.8153,379.1262,567.144,387.409" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[d77e46876cea116b3f41d3a22363bd90]
+link getData to callExternal--><path d="M406.952,297.271 C387.57,317.921 347.44,360.676 325.724,383.812 " fill="none" id="getData-&gt;callExternal" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="322.148,387.623,331.2244,383.7995,325.5704,383.9778,325.3921,378.3238,322.148,387.623" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[c03afd1bea3ed05c462a2e84506ba9ed]
+link getImage to callExternal--><path d="M326.181,297.7 C323.139,318.099 317.013,359.178 313.545,382.434 " fill="none" id="getImage-&gt;callExternal" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="312.806,387.388,318.0914,379.0775,313.5445,382.4428,310.1792,377.8959,312.806,387.388" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[dae1c84efe4dd63ad3c31f63c352212a]
+link _Logger to userMetadata--><path d="M248.879,414.443 C251.287,415.48 253.684,416.509 256,417.5 C294.932,434.1636 339.88,453.1663 369.059,465.4718 " fill="none" id="_Logger-&gt;userMetadata" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="373.961,467.5384,367.2224,460.3557,369.3539,465.5956,364.1139,467.7271,373.961,467.5384" style="stroke: #000000; stroke-width: 0.5;"/><script type="text/plantuml"><![CDATA[MD5=[47e22afdb3a64da274d6793fc8c30a1d]
+@startuml
+
+scale max 1920 width
+top to bottom direction
+
+skinparam nodesep 13
+skinparam ranksep 26
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Tahoma
+skinparam defaultFontSize 12
+skinparam roundCorner 6
+skinparam dpi 150
+skinparam arrowColor black
+skinparam arrowThickness 0.5
+skinparam packageTitleAlignment left
+
+skinparam usecase {
+  borderThickness 0.5
+}
+
+skinparam rectangle {
+  borderThickness 0.5
+}
+
+skinparam component {
+  borderThickness 1
+}
+
+
+package "FakeUser: Controllers" {
+  (<b>FakeUserController</b>)
+}
+
+package "FakeUser: Usecases" {
+  (createFakeUser)
+}
+
+package "FakeUser: Usecase Interactors" {
+  (getData)
+  (getImage)
+}
+
+package "FakeUser: Entities" {
+  rectangle "User" as _User
+}
+
+package "FakeUser: Config" {
+  (endpoints)
+}
+
+package "FakeUser: Frameworks" {
+  (callExternal)
+  rectangle "Logger" as _Logger
+  (userFeatureToggles)
+  (userMetadata)
+  (validators)
+}
+
+(callExternal) --> (endpoints)
+(createFakeUser) --> (getData)
+(createFakeUser) --> (getImage)
+(createFakeUser) --> _User
+(<b>FakeUserController</b>) --[thickness=1]> (createFakeUser)
+(<b>FakeUserController</b>) --[thickness=1]> _Logger
+(<b>FakeUserController</b>) --[thickness=1]> (userFeatureToggles)
+(<b>FakeUserController</b>) --[thickness=1]> (userMetadata)
+(<b>FakeUserController</b>) --[thickness=1]> (validators)
+(getData) ---> (callExternal)
+(getImage) ---> (callExternal)
+_Logger ..> (userMetadata)
+
+@enduml
+
+
+' View and edit on https://arkit.pro
+]]></script></g></svg>

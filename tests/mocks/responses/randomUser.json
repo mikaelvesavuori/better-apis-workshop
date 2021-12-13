@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mrs",
+        "first": "Adeline",
+        "last": "Kettler"
+      },
+      "location": {
+        "street": {
+          "number": 4970,
+          "name": "Schlossstraße"
+        },
+        "city": "Vellberg",
+        "state": "Berlin",
+        "country": "Germany",
+        "postcode": 13881,
+        "coordinates": {
+          "latitude": "-38.7704",
+          "longitude": "84.2191"
+        },
+        "timezone": {
+          "offset": "-11:00",
+          "description": "Midway Island, Samoa"
+        }
+      },
+      "email": "adeline.kettler@example.com",
+      "login": {
+        "uuid": "06607de2-007d-41b3-9c2d-3302447e5bb6",
+        "username": "smallduck322",
+        "password": "birddog",
+        "salt": "aBZfUmwX",
+        "md5": "15bd0a431331bae03ec98978f3357e55",
+        "sha1": "7a6d1f9374d540c44d9cb3c4f7ec9e8fdde666d6",
+        "sha256": "8948766f48bf95ee0336e9ed34139fd50692f02f53ba1401d6af003242812fb6"
+      },
+      "dob": {
+        "date": "1945-04-12T01:21:05.798Z",
+        "age": 76
+      },
+      "registered": {
+        "date": "2005-03-01T05:37:42.568Z",
+        "age": 16
+      },
+      "phone": "0249-3774999",
+      "cell": "0176-7115885",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/24.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/24.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/24.jpg"
+      },
+      "nat": "DE"
+    }
+  ],
+  "info": {
+    "seed": "05d91c4c7bd88550",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}

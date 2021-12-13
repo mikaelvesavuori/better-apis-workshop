@@ -1,0 +1,115 @@
+name: main
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'feature/*'
+  pull_request:
+    branches:
+      - 'main'
+      - 'feature/*'
+
+permissions:
+  actions: read
+
+jobs:
+  build-unix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ['ubuntu-latest']
+        node-version: [14.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: License check
+        run: |
+          echo Run license check...
+          npm run licenses
+
+      - name: Scan for secrets
+        uses: zricethezav/gitleaks-action@master
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'template'
+          template: '@/contrib/sarif.tpl'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      - name: Install dependencies
+        run: |
+          npm ci --ignore-scripts
+          npm audit fix
+          pip3 install checkov
+
+      - name: Test (units)
+        run: |
+          echo Run unit tests...
+          npm run test:unit
+        env:
+          IS_MOCK_ENABLED: true
+
+      - name: Test (contracts)
+        run: |
+          echo Run unit tests...
+          npm run test:contracts
+
+      - name: Test (IAC)
+        run: |
+          echo Run IAC scanning...
+          pip3 install checkov
+          npm run scan:checkov
+
+      - name: Deploy services
+        run: |
+          echo Deploying services...
+          npx serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          npm run deploy
+
+      - name: Bake time
+        run: |
+          echo Sleeping and baking for a bit...
+          sleep 10s
+        shell: bash
+
+      - name: Smoke test
+        run: |
+          echo Running a single smoke test...
+          bash tests/synthetics/smoketest.sh ${{ secrets.FAKE_USER_ENDPOINT }}
+
+      - name: Test (integrations)
+        run: |
+          echo Run integration tests...
+          npm run test:integration
+
+        # See: https://github.com/marketplace/actions/k6-load-test
+      - name: Test (load)
+        uses: k6io/action@v0.2.0
+        with:
+          filename: tests/load/k6.js
+          flags: --vus 10 --duration 5s
+
+      - name: Deploy API documentation
+        uses: bump-sh/github-action@v1
+        with:
+          doc: better-apis-workshop
+          token: ${{ secrets.BUMP_TOKEN }}
+          file: api/schema.yml

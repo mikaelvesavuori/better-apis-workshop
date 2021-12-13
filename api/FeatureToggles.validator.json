@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Feature toggles",
+  "description": "Sends back a set of feature toggles for the provided user name",
+  "type": "object",
+  "definitions": {
+    "userName": {
+      "type": "string",
+      "pattern": "^[-A-Za-z0-9_@.]{4,30}$"
+    }
+  },
+  "required": ["userName"],
+  "properties": {
+    "userName": {
+      "$ref": "#/definitions/userName",
+      "type": "string",
+      "title": "userName",
+      "description": "The user group"
+    }
+  },
+  "additionalProperties": false
+}

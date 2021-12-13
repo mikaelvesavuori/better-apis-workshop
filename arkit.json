@@ -1,0 +1,92 @@
+{
+  "$schema": "https://arkit.js.org/schema.json",
+  "excludePatterns": ["tests/", "testdata/"],
+  "components": [
+    {
+      "type": "FakeUser: Controllers",
+      "patterns": ["src/FakeUser/controllers/*.ts"]
+    },
+    {
+      "type": "FakeUser: Usecases",
+      "patterns": ["src/FakeUser/usecases/*.ts"]
+    },
+    {
+      "type": "FakeUser: Usecase Interactors",
+      "patterns": ["src/FakeUser/usecases/interactors/*.ts"]
+    },
+    {
+      "type": "FakeUser: Entities",
+      "patterns": ["src/FakeUser/entities/*.ts"]
+    },
+    {
+      "type": "FakeUser: Config",
+      "patterns": ["src/FakeUser/config/*.ts"]
+    },
+    {
+      "type": "FakeUser: Frameworks",
+      "patterns": ["src/FakeUser/frameworks/*.ts"]
+    },
+    {
+      "type": "FeatureToggles: Controllers",
+      "patterns": ["src/FeatureToggles/controllers/*.ts"]
+    },
+    {
+      "type": "FeatureToggles: Usecases",
+      "patterns": ["src/FeatureToggles/usecases/*.ts"]
+    },
+    {
+      "type": "FeatureToggles: Config",
+      "patterns": ["src/FeatureToggles/config/*.ts"]
+    }
+  ],
+  "output": [
+    {
+      "path": "diagrams/arkit-fakeuser.svg",
+      "groups": [
+        {
+          "first": true,
+          "type": "FakeUser: Controllers",
+          "components": ["FakeUser: Controllers"]
+        },
+        {
+          "type": "FakeUser: Usecases",
+          "components": ["FakeUser: Usecases"]
+        },
+        {
+          "type": "FakeUser: Usecase Interactors",
+          "components": ["FakeUser: Usecase Interactors"]
+        },
+        {
+          "type": "FakeUser: Entities",
+          "components": ["FakeUser: Entities"]
+        },
+        {
+          "type": "FakeUser: Config",
+          "components": ["FakeUser: Config"]
+        },
+        {
+          "type": "FakeUser: Frameworks",
+          "components": ["FakeUser: Frameworks"]
+        }
+      ]
+    },
+    {
+      "path": "diagrams/arkit-toggles.svg",
+      "groups": [
+        {
+          "first": true,
+          "type": "FeatureToggles: Controllers",
+          "components": ["FeatureToggles: Controllers"]
+        },
+        {
+          "type": "FeatureToggles: Usecases",
+          "components": ["FeatureToggles: Usecases"]
+        },
+        {
+          "type": "FeatureToggles: Config",
+          "components": ["FeatureToggles: Config"]
+        }
+      ]
+    }
+  ]
+}

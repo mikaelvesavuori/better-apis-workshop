@@ -1,0 +1,192 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Fake User
+  description: This is a simple workshop combined with a fairly elaborate demonstration of how to approach improving an API to production-grade levels.
+
+servers:
+  - url: https://RANDOM.execute-api.REGION.amazonaws.com/shared/
+    description: API server
+
+paths:
+  /fakeUser:
+    get:
+      description: Returns a fake user
+      responses:
+        default:
+          $ref: '#/components/responses/401'
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleFakeUser'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '406':
+          $ref: '#/components/responses/406'
+        '429':
+          $ref: '#/components/responses/429'
+      parameters:
+        - in: header
+          name: Authorization
+          description: User name (email) of the user to authorize
+          required: true
+          schema:
+            type: string
+            minLength: 4
+            maxLength: 30
+            pattern: ^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$
+        - in: header
+          name: X-Client-Version
+          description: API client version to use
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 2
+            format: int32
+
+  /featureToggles:
+    post:
+      description: Returns feature toggles
+      responses:
+        default:
+          $ref: '#/components/responses/403'
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeatureToggles'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '406':
+          $ref: '#/components/responses/406'
+        '429':
+          $ref: '#/components/responses/429'
+      requestBody:
+        $ref: '#/components/requestBodies/FeatureToggles'
+
+
+components:
+  schemas:
+    SingleFakeUser:
+      type: object
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+          description: The fake user's name.
+          minLength: 4
+          maxLength: 30
+          pattern: ^[\w\-\s]{4,30}$
+        image:
+          type: string
+          description: The fake user's image URL (cat photo).
+          minLength: 10
+          maxLength: 100
+          pattern: /[\w\-\.\/:]*$/
+        id:
+          type: string
+          description: The fake user' ID.
+          minLength: 8
+          maxLength: 40
+          pattern: /[\w\-]*$/
+        email:
+          type: string
+          description: The fake user's fake email address.
+          minLength: 4
+          maxLength: 30
+          pattern: ^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$
+
+    FeatureToggles:
+      type: object
+      additionalProperties: false
+      properties:
+        enableBetaFeatures:
+          type: boolean
+          description: Can the user access beta features?
+        userGroup:
+          type: string
+          description: What is the user's group?
+          minLength: 2
+          maxLength: 24
+          pattern: ^[A-Za-z_-]{2,24}$
+
+  requestBodies:
+    FeatureToggles:
+      description: User name (email) of the user to authorize
+      required: true
+      content:
+        application/json:
+          schema:
+            type: string
+            minLength: 4
+            maxLength: 30
+            pattern: ^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$
+
+  responses:
+    401:
+      description: Unauthorized
+      content:
+        text/plain:
+          schema:
+            title: Unauthorized
+            type: string
+            example: Unauthorized
+            minLength: 3
+            maxLength: 30
+            pattern: ^[A-Za-z0-9.!\s]{3,30}$
+    403:
+      description: Forbidden
+      content:
+        text/plain:
+          schema:
+            title: Forbidden
+            type: string
+            example: Forbidden
+            minLength: 3
+            maxLength: 30
+            pattern: ^[A-Za-z0-9.!\s]{3,30}$
+    404:
+      description: Not found
+      content:
+        text/plain:
+          schema:
+            title: Not found
+            type: string
+            example: Not found
+            minLength: 3
+            maxLength: 30
+            pattern: ^[A-Za-z0-9.!\s]{3,30}$
+    406:
+      description: Not acceptable
+      content:
+        text/plain:
+          schema:
+            title: Not acceptable
+            type: string
+            example: Not acceptable
+            minLength: 3
+            maxLength: 30
+            pattern: ^[A-Za-z0-9.!\s]{3,30}$
+    429:
+      description: Too many requests
+      content:
+        text/plain:
+          schema:
+            title: Too many requests
+            type: string
+            example: Too many requests
+            minLength: 3
+            maxLength: 30
+            pattern: ^[A-Za-z0-9.!\s]{3,30}$

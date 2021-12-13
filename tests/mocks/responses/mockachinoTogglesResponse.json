@@ -1,0 +1,31 @@
+{
+  "error": {
+    "enableBetaFeatures": false,
+    "userGroup": "error"
+  },
+  "legacy": {
+    "enableBetaFeatures": false,
+    "userGroup": "legacy"
+  },
+  "beta": {
+    "enableBetaFeatures": true,
+    "userGroup": "beta"
+  },
+  "standard": {
+    "enableBetaFeatures": false,
+    "userGroup": "standard"
+  },
+  "dev": {
+    "enableBetaFeatures": true,
+    "userGroup": "dev"
+  },
+  "devNewFeature": {
+    "enableBetaFeatures": true,
+    "enableNewUserApi": true,
+    "userGroup": "devNewFeature"
+  },
+  "qa": {
+    "enableBetaFeatures": false,
+    "userGroup": "qa"
+  }
+}

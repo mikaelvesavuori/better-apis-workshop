@@ -1,0 +1,208 @@
+[
+  {
+    "name": "It should return a hardcoded response for a legacy user",
+    "payload": {
+      "headers": {
+        "Authorization": "legacyuser@company.com",
+        "X-Client-Version": 1
+      }
+    },
+    "expectation": {
+      "name": "Someguy Someguyson"
+    }
+  },
+  {
+    "name": "It should return a hardcoded response for a standard user who has set the client version to 1",
+    "payload": {
+      "headers": {
+        "Authorization": "standarduser@company.com",
+        "X-Client-Version": 1
+      }
+    },
+    "expectation": {
+      "name": "Someguy Someguyson"
+    }
+  },
+  {
+    "name": "It should return a hardcoded response for a QA user who has set the client version to 1",
+    "payload": {
+      "headers": {
+        "Authorization": "qauser@company.com",
+        "X-Client-Version": 1
+      }
+    },
+    "expectation": {
+      "name": "Someguy Someguyson"
+    }
+  },
+  {
+    "name": "It should return a hardcoded response for a beta user who has set the client version to 1",
+    "payload": {
+      "headers": {
+        "Authorization": "betauser@company.com",
+        "X-Client-Version": 1
+      }
+    },
+    "expectation": {
+      "name": "Someguy Someguyson"
+    }
+  },
+  {
+    "name": "It should return a hardcoded response for a dev user who has set the client version to 1",
+    "payload": {
+      "headers": {
+        "Authorization": "devuser@company.com",
+        "X-Client-Version": 1
+      }
+    },
+    "expectation": {
+      "name": "Someguy Someguyson"
+    }
+  },
+  {
+    "name": "It should return a hardcoded response for a dev user ('new feature') who has set the client version to 1",
+    "payload": {
+      "headers": {
+        "Authorization": "devnewfeatureuser@company.com",
+        "X-Client-Version": 1
+      }
+    },
+    "expectation": {
+      "name": "Someguy Someguyson"
+    }
+  },
+  {
+    "name": "It should return the hardcoded response (version 1) for a legacy user",
+    "payload": {
+      "headers": {
+        "Authorization": "legacyuser@company.com",
+        "X-Client-Version": 2
+      }
+    },
+    "expectation": {
+      "name": "Someguy Someguyson"
+    }
+  },
+  {
+    "name": "It should return the version 2 (beta) response for a standard user",
+    "payload": {
+      "headers": {
+        "Authorization": "standarduser@company.com",
+        "X-Client-Version": 2
+      }
+    },
+    "expectation": {
+      "name": "Leanne Graham",
+      "image": "https://thatcopy.github.io/catAPI/imgs/jpg/1206c62.jpg"
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "image": { "type": "string" }
+      },
+      "required": ["name", "image"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "It should return the version 2 (beta) response for a QA user",
+    "payload": {
+      "headers": {
+        "Authorization": "qauser@company.com",
+        "X-Client-Version": 2
+      }
+    },
+    "expectation": {
+      "name": "Leanne Graham",
+      "image": "https://thatcopy.github.io/catAPI/imgs/jpg/1206c62.jpg"
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "image": { "type": "string" }
+      },
+      "required": ["name", "image"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "It should return the version 2 (beta) response for a beta user",
+    "payload": {
+      "headers": {
+        "Authorization": "betauser@company.com",
+        "X-Client-Version": 2
+      }
+    },
+    "expectation": {
+      "name": "Leanne Graham",
+      "image": "https://thatcopy.github.io/catAPI/imgs/jpg/2b74f7c.jpg",
+      "id": "123-abc-asdf",
+      "email": "some_test_email@company.com"
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "image": { "type": "string" },
+        "id": { "type": "string" },
+        "email": { "type": "string" }
+      },
+      "required": ["name", "image", "id", "email"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "It should return the version 2 (beta) response for a dev user",
+    "payload": {
+      "headers": {
+        "Authorization": "devuser@company.com",
+        "X-Client-Version": 2
+      }
+    },
+    "expectation": {
+      "name": "Leanne Graham",
+      "image": "https://thatcopy.github.io/catAPI/imgs/jpg/2b74f7c.jpg",
+      "id": "123-abc-asdf",
+      "email": "some_test_email@company.com"
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "image": { "type": "string" },
+        "id": { "type": "string" },
+        "email": { "type": "string" }
+      },
+      "required": ["name", "image", "id", "email"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "It should return a variant with content hidden behind a feature toggle, for a dev user that is allowed to see it",
+    "payload": {
+      "headers": {
+        "Authorization": "devnewfeatureuser@company.com",
+        "X-Client-Version": 2
+      }
+    },
+    "expectation": {
+      "name": "Amelia Noel",
+      "image": "https://thatcopy.github.io/catAPI/imgs/jpg/2039314.jpg",
+      "id": "1cbde270-5267-4402-8dde-604172f7cb75",
+      "email": "amelia.noel@example.com"
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "image": { "type": "string" },
+        "id": { "type": "string" },
+        "email": { "type": "string" }
+      },
+      "required": ["name", "image", "id", "email"],
+      "additionalProperties": false
+    }
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "identity": {
+    "name": "better-apis-demo",
+    "version": "1.0.0"
+  },
+  "dependencies": [],
+  "tests": {
+    "include": ["RandomUser", "JSONPlaceholder", "catAPI", "FakeUser", "FeatureToggles"],
+    "skipTestingLocalResources": false,
+    "skipTestingRemoteResources": true,
+    "skipIncludingDependents": true
+  },
+  "resources": {
+    "local": {
+      "contractsPath": "testdata/contracts/contracts.json",
+      "testsPath": "tests/contracts/contracts.json"
+    },
+    "remote": {
+      "brokerEndpoint": ""
+    }
+  },
+  "publishing": {
+    "publishLocalContracts": false,
+    "publishLocalTests": false
+  }
+}
