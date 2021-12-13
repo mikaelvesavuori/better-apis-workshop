@@ -729,7 +729,7 @@ Each release should be uniquely versioned. We should also keep release notes, bu
 
 ### 🗂️ API client version using headers
 
-The first way to define expectations is to use API versioning. While there are several ways to do this—for example, refer to [this article from Nordic APIs](https://nordicapis.com/everything-you-need-to-know-about-api-versioning/)—we are going to use a header (or the lack of one) to define which API version to use.
+The first way to define expectations is to use API versioning. While there are several ways to do this—for example, refer to [this article from Nordic APIs](https://nordicapis.com/everything-you-need-to-know-about-api-versioning/)—we are going to use a header to define which API version to use.
 
 **🎯 Example**: See `src/FakeUser/controllers/FakeUserController.ts` and note how the header is handled in `checkInput()`.
 
@@ -773,7 +773,9 @@ We only use validators for POST requests, which means the FeatureToggles functio
 
 ### 🧬 Branch by abstraction
 
-In Paul Hammant's words: `[Branch] by abstraction instead of by [code] branching in source control. And no, that doesn't mean sprinkle conditionals into your source code, it means to use an abstraction concept that's idiomatic for the programming language you are using.`
+In Paul Hammant's words:
+
+> [Branch] by abstraction instead of by [code] branching in source control. And no, that doesn't mean sprinkle conditionals into your source code, it means to use an abstraction concept that's idiomatic for the programming language you are using.
 
 It's a methodical, very practical thing too:
 
@@ -897,7 +899,7 @@ Refer to the pattern [Aggressive Obsolescence](https://microservice-api-patterns
 
 ### 🦺 Canary deployment
 
-The traditional way to deploy software is as one big block that is instantly active whenever it's on a machine. If the code was a complete bomb, then you have zero time to verify this. This notion is what makes managers ask for counter-intuitive things like code freeze and all-hands-on-deck deployments. Let's forever end those days!
+The traditional way to deploy software is as one big block that becomes instantly activated whenever it's deployed to a machine. If the code was a complete bomb, then you have zero time to verify this. This notion is what makes managers ask for counter-intuitive things like code freeze and all-hands-on-deck deployments. Let's forever end those days!
 
 In `serverless.yml` at line ~85, you'll see `type: AllAtOnce`. This means that we get a classic "deploy === release" pattern. When the deployment is done, the function version is active, with a clear cut-off between the previous and the current (new) version.
 
