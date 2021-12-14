@@ -148,11 +148,11 @@ Clone and fork the repo as you normally would.
 
 ### Optional: Get a Bump account and token
 
+_If you don't want to use Bump, go ahead and remove the part at the end of `.github/workflows/main.yml`._
+
 Go to the [Bump website](https://bump.sh) and create a free account and get your token (accessible under `CI deployment`, see the `Access token` field).
 
 **Copy the token for later use.**
-
-_If you don't want to use Bump, remove the part at the end of `.github/workflows/main.yml`._
 
 ### 2. Mockachino feature toggles
 
@@ -198,7 +198,7 @@ You will get a "space" in which you can administer and edit the mock API. You'll
 
 ### 3. First deployment to AWS using Serverless Framework
 
-Install all dependencies first with `npm install`, then make a first deployment from your machine with `npm run deploy`.
+Install all dependencies with `npm install`, set up [husky](https://github.com/typicode/husky) pre-commits with `npm run prepare`, then make a first deployment from your machine with `npm run deploy`.
 
 We do this so that the dynamic endpoints are known to us; we have a logical dependency to these when it comes to the test automation.
 
@@ -218,7 +218,7 @@ Next, also update the following files to reflect your Mockachino endpoint:
 - `jest.env.js` (line 2)
 - `tests/mocks/handlers.ts` (line 11-12)
 
-When it's deployed, update the following files to reflect your FakeUser endpoint on AWS:
+Continue by updating the following files to reflect your FakeUser endpoint on AWS:
 
 - `api/schema.yml` (line 8)
 - `tests/integration/index.ts` (line 6-7)
@@ -231,7 +231,7 @@ If you chose to use Bump:
 
 ### Optional: Continuous Integration (CI) on GitHub
 
-If you connect this repository to GitHub you will be able to use GitHub Actions to run a sample CI script with all the tests, deployments, and stuff. The CI script acts as a template for how you can tie together all the build-time aspects in a simple way. It should be easily portable to whatever CI platform you have.
+If you connect this repository to GitHub you will be able to use GitHub Actions to run a sample CI script with all the tests, deployments, and stuff. The CI script acts as a template for how you can tie together all the build-time aspects in a simple way. It should be easily portable to whatever CI platform you might otherwise be running.
 
 You'll need a few [secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) set beforehand if you are going to use it:
 
@@ -385,7 +385,7 @@ You can read more about the implementation patterns, and how they are organized 
 
 ### 🖥️ The drawbacks of hardware-segregated environments
 
-- You start expecting environmental parity for any other systems
+- You start expecting environmental parity between any other systems
 - You start expecting that all systems are in similar, co-deployed stages
 - The implicit reasoning starts becoming that you should/can only have a very low degree of variability/dynamism in configuration
 - As a consequence, such "pre-baked" configuration tests may start becoming large-scale blocking, manual tests
@@ -412,8 +412,11 @@ The demo application provides an API that returns a "fake user":
 - The second version (`beta`) includes a name and some other fields retrieved from an external API, plus a profile image (of a cat) from another external API.
 - Finally, a new feature is developed on top of the second version, using a third external API. This feature is hidden under a feature toggle named `enableNewUserApi`.
 
+More flows and details can be seen in the diagrams below.
+
 The main software components are:
 
+- **Microservice**: The `FakeUserBasic` service, if you want to do the workshop part and have some boilerplate code ready
 - **Microservice**: The `FakeUser` service
 - **Microservice**: The `FeatureToggles` service
 
@@ -443,6 +446,10 @@ The feature toggles are fetched, as has been stated previously, from Mockachino,
 
 ![FakeUser](/diagrams/arkit-fakeuser.svg 'FakeUser')
 
+### FakeUserBasic
+
+![FakeUser](/diagrams/arkit-fakeuserbasic.svg 'FakeUserBasic')
+
 ### FeatureToggles
 
 ![FeatureToggles](/diagrams/arkit-toggles.svg 'FeatureToggles')
@@ -454,9 +461,9 @@ The feature toggles are fetched, as has been stated previously, from Mockachino,
 Services used are:
 
 - [Amazon Web Services](https://aws.amazon.com)
-- [Bump](https://bump.sh)
-- [Cloudflare Pages](https://pages.cloudflare.com)
-- [GitHub](https://github.com) and [GitHub Actions](https://github.com/features/actions)
+- Optional: [GitHub](https://github.com) and [GitHub Actions](https://github.com/features/actions)
+- Optional: [Bump](https://bump.sh)
+- Optional: [Cloudflare Pages](https://pages.cloudflare.com)
 
 The infrastructure components are:
 
@@ -536,7 +543,7 @@ Any non-trivial software development context requires some form of common ground
 
 The very first (technical) thing is to respect that good code, despite programming language, is good code even over time. Follow wise conventions like SOLID to guide your daily work. See for example this [Stack Overflow article](https://stackoverflow.blog/2021/11/01/why-solid-principles-are-still-the-foundation-for-modern-software-architecture/) for a concise introduction.
 
-**🎯 Example**: While it's not ideal to point to a certain line of code here, I hope that I've done my part in writing good "solid" code for this project.
+**🎯 Example**: One example could be the use of "dependency inversion" when calling the `betaVersion()` function in `src/FakeUser/controllers/FakeUserController.ts`, as we send in the toggles for it to use. The "single responsibility principle" should hopefully also be evident throughout most of the code.
 
 ### 🛁 Clean architecture
 
@@ -687,11 +694,11 @@ _Spending even a bit of time raising the overall coverage to 90% or more will pr
 
 ### 🤖 Synthetic testing
 
-Synthetic testing sounds cool and weird but is really no more than a directed stream of traffic from a non-human source, such as a computer.
+Synthetic testing sounds cool and intriguing but is really no more than a directed stream of traffic from a non-human source, such as a computer.
 
 Above we used a smoke test, which is absolutely a synthetic test, but there is another dimension I want to bring up as well: We can use synthetic testing to continuously verify that our solution keeps performing as expected. In that regard, we can think of it as a kind of "offensive testing" mechanism.
 
-Running synthetic traffic is something that can certainly both stress the existing instance, but in our case we can also leverage it during the deployment window (when rolling out a canary deployment) to more fully exercise the system, flushing out any issues. This also gives us higher confidence in that we are more likely to start hitting any issues—which we may not in a, for example, 10-minute window with low organic traffic.
+Running synthetic traffic is something that can certainly stress the existing instance, but in our case we could also leverage it during the deployment window (when rolling out a canary deployment) to more fully exercise the system, flushing out any issues. This would also give us a higher probability of hitting any issues—which we may not in a, for example, 10-minute window with low organic traffic.
 
 **🎯 Example**: We can use load testing to run various larger-scale synthetic traffic volumes as one-offs to stress the API. Under `tests/load/k6.js` you can see our [k6](https://k6.io) script that we run in CI. The use-case we have here is to ensure that it functions correctly with a range of inputs rather than just a quick poke-and-feel as with the smoke test.
 

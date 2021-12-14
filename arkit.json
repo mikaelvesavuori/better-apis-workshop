@@ -27,6 +27,10 @@
       "patterns": ["src/FakeUser/frameworks/*.ts"]
     },
     {
+      "type": "FakeUserBasic: Controllers",
+      "patterns": ["src/FakeUserBasic/**/*.ts"]
+    },
+    {
       "type": "FeatureToggles: Controllers",
       "patterns": ["src/FeatureToggles/controllers/*.ts"]
     },
@@ -67,6 +71,16 @@
         {
           "type": "FakeUser: Frameworks",
           "components": ["FakeUser: Frameworks"]
+        }
+      ]
+    },
+    {
+      "path": "diagrams/arkit-fakeuserbasic.svg",
+      "groups": [
+        {
+          "first": true,
+          "type": "FakeUserBasic: Controllers",
+          "components": ["FakeUserBasic: Controllers"]
         }
       ]
     },
