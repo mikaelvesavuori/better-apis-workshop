@@ -34,6 +34,8 @@ provider:
   useDotenv: false
   environment:
     TOGGLES_URL: "https://www.mockachino.com/650dde1b-d1b5-48/toggles" # TODO: EDIT THIS TO YOUR ENDPOINT
+    #LIBHONEY_DATASET: better-apis-workshop
+    #LIBHONEY_API_KEY: some-random-key-123
 
 plugins:
   - serverless-webpack
