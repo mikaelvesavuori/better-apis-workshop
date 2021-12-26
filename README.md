@@ -889,7 +889,7 @@ export const userPermissions: Record<string, UserGroup> = {
 };
 ```
 
-For more full-fledged implementations, consider tools like [Oso](https://www.osohq.com) to authorize on the overall "access level".
+For more full-fledged implementations, consider tools like [Oso](https://www.osohq.com) to authorize on the overall "access level". [See for example this demo](https://www.osohq.com/post/add-authorization-to-a-serverless-nodejs-app) using a similar serverless stack, or the plain [quick start version](https://docs.osohq.com/node/getting-started/quickstart.html).
 
 ### 🗺️ Lifecycle management and roadmap
 
