@@ -910,7 +910,7 @@ The traditional way to deploy software is as one big block that becomes instantl
 
 In `serverless.yml` at line ~85, you'll see `type: AllAtOnce`. This means that we get a classic "deploy === release" pattern. When the deployment is done, the function version is active, with a clear cut-off between the previous and the current (new) version.
 
-There are considerations and problems with this approach. In our AWS circumstances, running on Lambda, we won't face downtime while the instance switches over, and a half-good PaaS solution won't create massive headaches either. However, we should primarily concern ourselves by considering application-level issues, rather than low-level technical issues. So when that "all at once" deployment is done, if something problematic surfaces that were not caught by testing, there is no obvious way how to proceed. Rollback? Roll forward? Hotfix, yay or nay? Sarcastic note: It's hardly unheard of that even manual testing and code freezes slip up.
+There are considerations and problems with this approach. In our AWS circumstances, running on Lambda, we won't face downtime while the instance switches over, and a half-good PaaS solution won't create massive headaches either. However, we should primarily concern ourselves by considering application-level issues, rather than low-level technical issues. So when that "all at once" deployment is done, if something problematic surfaces that was not caught by testing, there is no obvious way how to proceed. Rollback? Roll forward? Hotfix, yay or nay? Sarcastic note: It's hardly unheard of that even manual testing and code freezes slip up.
 
 Let's be honest: **Shit happens anyway**.
 
