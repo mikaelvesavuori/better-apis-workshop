@@ -60,7 +60,7 @@
     "msw": "latest",
     "prettier": "2",
     "serverless": "2",
-    "serverless-offline": "8",
+    "serverless-offline": "12",
     "serverless-plugin-aws-alerts": "1",
     "serverless-plugin-canary-deployments": "latest",
     "serverless-webpack": "5",
