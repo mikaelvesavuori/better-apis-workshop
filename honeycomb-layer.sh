@@ -9,7 +9,7 @@
 
 REGION="eu-north-1"
 ARCH="x86_64"
-VERSION="7"
+VERSION="11"
 
 aws lambda update-function-configuration \
   --function-name "better-apis-demo-shared-FakeUser" \
