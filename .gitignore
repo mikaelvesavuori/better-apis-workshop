@@ -11,6 +11,7 @@ jest-coverage/
 .webpack/
 .esbuild/
 .serverless/
+build/
 
 # Diagrams
 diagrams/*.bkp
