@@ -58,7 +58,7 @@
     "eslint-plugin-prettier": "5",
     "husky": "9",
     "jest": "29",
-    "license-compliance": "latest",
+    "license-compliance": "3",
     "msw": "latest",
     "prettier": "3",
     "serverless": "3",
