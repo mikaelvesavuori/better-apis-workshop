@@ -14,8 +14,9 @@ function isValidCatApiImageUrl(url: string) {
 
 // Remove Cat API image response from expected result since the end of the URL is not deterministic
 function getDeterministicResult(obj: Record<string, any>) {
-  delete obj.body.image;
-  return obj;
+  const newObj = JSON.parse(JSON.stringify(obj));
+  delete newObj.body.image;
+  return newObj;
 }
 
 describe('Failure cases', () => {
