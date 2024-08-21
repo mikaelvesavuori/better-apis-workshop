@@ -35,7 +35,7 @@ jobs:
           npm run licenses
 
       - name: Scan for secrets
-        uses: zricethezav/gitleaks-action@master
+        uses: gitleaks/gitleaks-action@v2
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master

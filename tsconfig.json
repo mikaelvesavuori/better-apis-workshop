@@ -14,7 +14,6 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "types": ["jest", "node"],
     "resolveJsonModule": true
   },
   "include": ["./src/**/*.ts", "./tests/**/*.ts"],
