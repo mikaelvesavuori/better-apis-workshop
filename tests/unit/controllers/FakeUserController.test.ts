@@ -7,6 +7,17 @@ import v2Basic from '../../../testdata/responses/FakeUser/v2Basic.json';
 import v2HardcodedFields from '../../../testdata/responses/FakeUser/v2HardcodedFields.json';
 import v2NewFeature from '../../../testdata/responses/FakeUser/v2NewFeature.json';
 
+function isValidCatApiImageUrl(url: string) {
+  const regex = /^https:\/\/cdn2\.thecatapi\.com\/images\/[a-zA-Z0-9_-]+\.jpg$/;
+  return regex.test(url);
+}
+
+// Remove Cat API image response from expected result since the end of the URL is not deterministic
+function getDeterministicResult(obj: Record<string, any>) {
+  delete obj.body.image;
+  return obj;
+}
+
 describe('Failure cases', () => {
   test('It should throw an error if calling without any arguments', async () => {
     // @ts-ignore
@@ -60,27 +71,32 @@ describe('Success cases', () => {
 
     test('It should return the version 2 (beta) response for a standard user', async () => {
       const result = await getResult(FakeUserController, 'standarduser@company.com', '2');
-      expect(result).toMatchObject(v2Basic);
+      expect(isValidCatApiImageUrl(result.body.image)).toBe(true);
+      expect(result).toMatchObject(getDeterministicResult(v2Basic));
     });
 
     test('It should return the version 2 (beta) response for a QA user', async () => {
       const result = await getResult(FakeUserController, 'qauser@company.com', '2');
-      expect(result).toMatchObject(v2Basic);
+      expect(isValidCatApiImageUrl(result.body.image)).toBe(true);
+      expect(result).toMatchObject(getDeterministicResult(v2Basic));
     });
 
     test('It should return the version 2 (beta) response for a beta user', async () => {
       const result = await getResult(FakeUserController, 'betauser@company.com', '2');
-      expect(result).toMatchObject(v2HardcodedFields);
+      expect(isValidCatApiImageUrl(result.body.image)).toBe(true);
+      expect(result).toMatchObject(getDeterministicResult(v2HardcodedFields));
     });
 
     test('It should return the version 2 (beta) response for a dev user', async () => {
       const result = await getResult(FakeUserController, 'devuser@company.com', '2');
-      expect(result).toMatchObject(v2HardcodedFields);
+      expect(isValidCatApiImageUrl(result.body.image)).toBe(true);
+      expect(result).toMatchObject(getDeterministicResult(v2HardcodedFields));
     });
 
     test('It should return a variant with content hidden behind a feature toggle, for a dev user that is allowed to see it', async () => {
       const result = await getResult(FakeUserController, 'devnewfeatureuser@company.com', '2');
-      expect(result).toMatchObject(v2NewFeature);
+      expect(isValidCatApiImageUrl(result.body.image)).toBe(true);
+      expect(result).toMatchObject(getDeterministicResult(v2NewFeature));
     });
   });
 });

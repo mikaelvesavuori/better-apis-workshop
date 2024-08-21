@@ -1,12 +1,9 @@
-import { APIGatewayProxyEvent, Context, APIGatewayProxyResult } from 'aws-lambda';
+import { APIGatewayProxyResult } from 'aws-lambda';
 
 /**
  * @description The controller for our "fake user" service, in its basic or naive shape.
  */
-export async function handler(
-  event: APIGatewayProxyEvent,
-  context: Context
-): Promise<APIGatewayProxyResult> {
+export async function handler(): Promise<APIGatewayProxyResult> {
   try {
     return {
       statusCode: 200,

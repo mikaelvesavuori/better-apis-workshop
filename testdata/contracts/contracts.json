@@ -309,10 +309,9 @@
     "catAPI": {
       "1.0.0": {
         "id": 9,
-        "url": "https://thatcopy.github.io/catAPI/imgs/jpg/2b74f7c.jpg",
-        "webpurl": "https://thatcopy.github.io/catAPI/imgs/webp/2b74f7c.webp",
-        "x": 53.47,
-        "y": 49.09
+        "url": "https://cdn2.thecatapi.com/images/jvg3XfEdC.jpg",
+        "width": 500,
+        "height": 500
       }
     }
   },

@@ -1,6 +1,8 @@
 # Files
 .env
 .dccache
+.DS_Store
+__quicktype*
 
 # Folders
 node_modules/
@@ -12,6 +14,7 @@ jest-coverage/
 .esbuild/
 .serverless/
 build/
+typedoc-docs/*
 
 # Diagrams
 diagrams/*.bkp

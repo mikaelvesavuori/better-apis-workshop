@@ -1,4 +1,4 @@
-import { rest } from 'msw';
+import { http, HttpResponse } from 'msw';
 
 import catApiResponse from './responses/catApi.json';
 import randomUserResponse from './responses/randomUser.json';
@@ -11,17 +11,18 @@ const JSONPLACEHOLDER_API = 'https://jsonplaceholder.typicode.com/users';
 const TOGGLES_ENDPOINT =
   process.env.TOGGLES_URL || 'https://www.mockachino.com/650dde1b-d1b5-48/toggles'; // TODO: EDIT THIS TO YOUR ENDPOINT
 
+// TODO: Verify
 export const handlers = [
-  rest.get(CAT_API, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(catApiResponse));
+  http.get(CAT_API, () => {
+    return HttpResponse.json(catApiResponse, { status: 200 });
   }),
-  rest.get(RANDOMUSER_API, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(randomUserResponse));
+  http.get(RANDOMUSER_API, () => {
+    return HttpResponse.json(randomUserResponse, { status: 200 });
   }),
-  rest.get(JSONPLACEHOLDER_API, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(jsonPlaceholderResponse));
+  http.get(JSONPLACEHOLDER_API, () => {
+    return HttpResponse.json(jsonPlaceholderResponse, { status: 200 });
   }),
-  rest.get(TOGGLES_ENDPOINT, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(mockachinoTogglesResponse));
+  http.get(TOGGLES_ENDPOINT, () => {
+    return HttpResponse.json(mockachinoTogglesResponse, { status: 200 });
   })
 ];

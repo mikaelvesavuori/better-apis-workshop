@@ -320,9 +320,8 @@
           "Get cat image": {
             "id": 1,
             "url": "https://url",
-            "webpurl": "https://url",
-            "x": 1,
-            "y": 1
+            "width": 1,
+            "height": 1
           }
         }
       ]

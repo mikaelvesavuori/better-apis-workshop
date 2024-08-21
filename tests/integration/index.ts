@@ -3,7 +3,8 @@ import Ajv from 'ajv';
 
 import assertions from './assertions.json';
 
-const INTEGRATION_ENDPOINT = 'https://RANDOM.execute-api.REGION.amazonaws.com/shared/fakeUser'; // TODO: EDIT THIS TO YOUR ENDPOINT
+const INTEGRATION_ENDPOINT =
+  'https://7fz4p1e94j.execute-api.eu-north-1.amazonaws.com/shared/fakeUser'; //'https://RANDOM.execute-api.REGION.amazonaws.com/shared/fakeUser'; // TODO: EDIT THIS TO YOUR ENDPOINT
 
 async function runIntegrationTests() {
   Promise.all(
@@ -25,11 +26,16 @@ async function runIntegrationTests() {
           ? test(schema, expectation)
           : JSON.stringify(response) === JSON.stringify(expectation);
         if (isMatch) resolve(true);
-        else reject(false);
+        else {
+          console.error(`⚠️ Did not match! Error in test: "${assertion.name}"`);
+          console.log('Schema:', schema);
+          console.log('Expectation:', expectation);
+          reject(false);
+        }
       });
     })
-  ).catch(() => {
-    console.log('❌ Failed integration tests');
+  ).catch((e) => {
+    console.log('❌ Failed integration tests', e);
     process.exit(1);
   });
 

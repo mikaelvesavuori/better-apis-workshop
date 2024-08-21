@@ -1,11 +1,12 @@
 /**
- * @description This is a very simplistic type for a response from the (external) catAPI.
- * @see https://thatcopy.pw/catapi/rest/
+ * @description This is a very simplistic type for a response from the (external) Cat API.
+ * @see https://developers.thecatapi.com
  */
-export type CatApiResponse = {
-  id: number;
-  url: string;
-  webpurl: string;
-  x: number;
-  y: number;
-};
+export type CatApiResponse = [
+  {
+    id: number;
+    url: string;
+    width: number;
+    height: number;
+  }
+];

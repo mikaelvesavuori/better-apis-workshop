@@ -14,7 +14,6 @@ export function validateImage(image: string) {
     return true;
   else return false;
 }
-///[A-Za-z0-9./:]{10,100}/
 
 /**
  * @description Internal validator that matches the "id" property in the "SingleFakeUser" schema (`api/schema.yml`).

@@ -8,8 +8,8 @@
 # Reference: https://github.com/honeycombio/honeycomb-lambda-extension
 
 REGION="eu-north-1"
-ARCH="x86_64"
-VERSION="11"
+ARCH="arm64" #"x86_64"
+VERSION="v11-1-2:1"
 
 aws lambda update-function-configuration \
   --function-name "better-apis-demo-shared-FakeUser" \

@@ -27,16 +27,18 @@ export class User {
   }
 
   /**
-   * @description Set the user's image based on response from catAPI.
+   * @description Set the user's image based on response from the Cat API.
+   * @todo Response is object in array.
    */
   public applyUserImageFromCatApi(imageResponse: CatApiResponse) {
-    if (!imageResponse || !imageResponse.url) throw new Error('No imageResponse!');
+    if (!imageResponse || !imageResponse[0].url) throw new Error('No imageResponse!');
 
-    const image = imageResponse.url as string;
+    const image = imageResponse[0].url as string;
     const isImageValid = validateImage(image);
     if (!isImageValid) throw new Error('Image is invalid');
 
-    this.enableBetaFeatures ? (this.userDataExtended.image = image) : (this.userData.image = image);
+    if (this.enableBetaFeatures) this.userDataExtended.image = image;
+    else this.userData.image = image;
   }
 
   /**

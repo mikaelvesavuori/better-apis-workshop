@@ -19,7 +19,7 @@ export async function createFakeUser(
     const dataResponse = await getData('RandomUser');
     user.applyUserDataFromRandomUser(dataResponse);
   }
-  // Else return regular response
+  // Otherwise return regular response
   else {
     const dataResponse = await getData('JSONPlaceholder');
     user.applyUserDataFromJsonPlaceholder(dataResponse);

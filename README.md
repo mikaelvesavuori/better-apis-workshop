@@ -10,7 +10,7 @@ Writing and maintaining APIs can be hard. While the cloud, serverless, and the m
 
 Werner Vogels, legendary CTO of Amazon, [states his API rules like this](https://www.youtube.com/watch?app=desktop&v=8_Xs8Ik0h1w):
 
-```
+```text
 1. APIs are Forever
 2. Never Break Backward Compatibility
 3. Work Backwards from Customer Use Cases
@@ -29,7 +29,7 @@ This project (together with the accompanying [docs and reading materials](https:
 
 **Observability** means that we can understand, from the outputs of our application, what it is doing and if it is behaving well. Or as [Charity Majors writes](https://twitter.com/mipsytipsy/status/1305398051842871297):
 
-```
+```text
 📉 Monitoring is for running and understanding other people's code (aka "your infrastructure")
 
 📈 Observability is for running and understanding *your* code -- the code you write, change and ship every day; the code that solves your core business problems.

@@ -2,7 +2,7 @@ service: better-apis-demo
 
 provider:
   name: aws
-  runtime: nodejs18.x
+  runtime: nodejs20.x
   stage: ${opt:stage, 'shared'}
   region: eu-north-1
   memorySize: 1024
@@ -22,40 +22,37 @@ provider:
   tracing:
     apiGateway: true
     lambda: true
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - xray:PutTelemetryRecords
-        - xray:PutTraceSegments
-        - codedeploy:*
-      Resource:
-        - "*"
-  useDotenv: false
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - xray:PutTelemetryRecords
+            - xray:PutTraceSegments
+            - codedeploy:*
+          Resource:
+            - "*"
   environment:
     TOGGLES_URL: "https://www.mockachino.com/650dde1b-d1b5-48/toggles" # TODO: EDIT THIS TO YOUR ENDPOINT
     #LIBHONEY_DATASET: better-apis-workshop
     #LIBHONEY_API_KEY: some-random-key-123
 
 plugins:
-  - serverless-webpack
+  - serverless-esbuild
   - serverless-offline
+  - serverless-iam-roles-per-function
   - serverless-plugin-aws-alerts
   - serverless-plugin-canary-deployments
 
 package:
   individually: true
-  patterns:
-    - node_modules/aws-sdk/**
-    - node_modules/aws-lambda/**
 
 custom:
   alerts:
     dashboards: true
-  webpack:
-    webpackConfig: 'webpack.config.js'
-    includeModules: true
-    packager: 'npm'
-    excludeFiles: src/**/*.test.js
+  esbuild:
+    bundle: true
+    minify: true
 
 functions:
   Authorizer:
@@ -95,7 +92,7 @@ functions:
           method: POST
           path: /featureToggles
           request:
-            schema:
+            schemas:
               application/json: ${file(api/FeatureToggles.validator.json)}
 
 resources:
