@@ -306,7 +306,7 @@
     }
   },
   {
-    "catAPI": {
+    "CatAPI": {
       "1.0.0": {
         "id": 9,
         "url": "https://cdn2.thecatapi.com/images/jvg3XfEdC.jpg",
@@ -322,7 +322,7 @@
       },
       "2.0.0": {
         "name": "Sofia Lavoie",
-        "image": "https://thatcopy.github.io/catAPI/imgs/jpg/96aff96.jpg",
+        "image": "https://cdn2.thecatapi.com/images/jvg3XfEdC.jpg",
         "id": "e815eb89-f5a3-473b-9202-4556d410fb9b",
         "email": "sofia.lavoie@example.com"
       }

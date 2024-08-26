@@ -5,7 +5,7 @@
   },
   "dependencies": [],
   "tests": {
-    "include": ["RandomUser", "JSONPlaceholder", "catAPI", "FakeUser", "FeatureToggles"],
+    "include": ["RandomUser", "JSONPlaceholder", "CatAPI", "FakeUser", "FeatureToggles"],
     "skipTestingLocalResources": false,
     "skipTestingRemoteResources": true,
     "skipIncludingDependents": true

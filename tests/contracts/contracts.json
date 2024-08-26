@@ -314,7 +314,7 @@
     }
   },
   {
-    "catAPI": {
+    "CatAPI": {
       "1.0.0": [
         {
           "Get cat image": {

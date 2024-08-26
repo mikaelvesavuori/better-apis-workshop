@@ -9,7 +9,7 @@ describe('Failure cases', () => {
     }).toThrowError();
   });
 
-  test('It should throw an error for an invalid catAPI response', () => {
+  test('It should throw an error for an invalid CatAPI response', () => {
     const user = new User();
     // @ts-ignore
     expect(() => {

@@ -93,7 +93,7 @@
     },
     "expectation": {
       "name": "Leanne Graham",
-      "image": "https://thatcopy.github.io/catAPI/imgs/jpg/1206c62.jpg"
+      "image": "https://cdn2.thecatapi.com/images/jvg3XfEdC.jpg"
     },
     "schema": {
       "type": "object",
@@ -115,7 +115,7 @@
     },
     "expectation": {
       "name": "Leanne Graham",
-      "image": "https://thatcopy.github.io/catAPI/imgs/jpg/1206c62.jpg"
+      "image": "https://cdn2.thecatapi.com/images/jvg3XfEdC.jpg"
     },
     "schema": {
       "type": "object",
@@ -189,7 +189,7 @@
     },
     "expectation": {
       "name": "Amelia Noel",
-      "image": "https://thatcopy.github.io/catAPI/imgs/jpg/2039314.jpg",
+      "image": "https://cdn2.thecatapi.com/images/jvg3XfEdC.jpg",
       "id": "1cbde270-5267-4402-8dde-604172f7cb75",
       "email": "amelia.noel@example.com"
     },

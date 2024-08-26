@@ -9,9 +9,9 @@ import { getImage } from './interactors/getImage';
 export async function createFakeUser(
   toggles: Record<string, unknown>
 ): Promise<UserData | UserDataExtended> {
-  // Use of catAPI is same in all cases
+  // Use of CatAPI is same in all cases
   const user = new User(toggles.enableBetaFeatures as boolean | false);
-  const imageResponse = await getImage('catAPI');
+  const imageResponse = await getImage('CatAPI');
   user.applyUserImageFromCatApi(imageResponse);
 
   // Use code branching for new development feature

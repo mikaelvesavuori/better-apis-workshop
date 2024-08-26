@@ -1,11 +1,11 @@
 import { http, HttpResponse } from 'msw';
 
-import catApiResponse from './responses/catApi.json';
+import catApiResponse from './responses/CatAPI.json';
 import randomUserResponse from './responses/randomUser.json';
 import jsonPlaceholderResponse from './responses/jsonPlaceholder.json';
 import mockachinoTogglesResponse from './responses/mockachinoTogglesResponse.json';
 
-const CAT_API = 'https://thatcopy.pw/catapi/rest/';
+const CAT_API = 'https://thatcopy.pw/CatAPI/rest/';
 const RANDOMUSER_API = 'https://randomuser.me/api/';
 const JSONPLACEHOLDER_API = 'https://jsonplaceholder.typicode.com/users';
 const TOGGLES_ENDPOINT =
