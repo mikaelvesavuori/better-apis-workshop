@@ -64,7 +64,7 @@
     "serverless": "3",
     "serverless-esbuild": "1",
     "serverless-iam-roles-per-function": "3",
-    "serverless-offline": "12",
+    "serverless-offline": "14",
     "serverless-plugin-aws-alerts": "1",
     "serverless-plugin-canary-deployments": "latest",
     "standard-version": "9",
